@@ -1,0 +1,195 @@
+/* Modern Snake Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.score-board {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.game-area {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#gameCanvas {
+    background-color: #0a1929;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 2px solid #00b4db;
+}
+
+.controls {
+    margin-top: 25px;
+}
+
+.instructions {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.instructions p {
+    margin: 10px 0;
+}
+
+.instructions strong {
+    color: #00b4db;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+}
+
+#startBtn {
+    background: linear-gradient(to right, #00b09b, #96c93d);
+    color: white;
+}
+
+#pauseBtn {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+}
+
+#resetBtn, #restartBtn {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    border: 2px solid #00b4db;
+    z-index: 10;
+    width: 80%;
+    max-width: 500px;
+}
+
+.game-over h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff5e62;
+}
+
+.game-over p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .score {
+        font-size: 1.2rem;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 80%;
+    }
+}
